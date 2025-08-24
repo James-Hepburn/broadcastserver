@@ -23,16 +23,12 @@ public class BroadcastCommand implements Runnable {
     @Override
     public void run () {
         if (this.action.equals ("start")) {
-            startServer ();
+            SpringApplication.run (BroadcastserverApplication.class);
         } else if (this.action.equals ("connect")) {
             connectClient ();
         } else {
             System.err.println ("Invalid action");
         }
-    }
-
-    public void startServer () {
-        SpringApplication.run (BroadcastserverApplication.class);
     }
 
     private void connectClient() {
